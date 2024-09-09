@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Coding/rj80099-DSA_CodingInterview/DSA_Template",
-      "program": "d:/Coding/rj80099-DSA_CodingInterview/DSA_Template/build/Debug/outDebug",
+      "cwd": "d:/Coding/rj80099-CodingInterviewProblemSolving/Basic_Logic_Pattern",
+      "program": "d:/Coding/rj80099-CodingInterviewProblemSolving/Basic_Logic_Pattern/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

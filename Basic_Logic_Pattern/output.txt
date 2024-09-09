@@ -1,4 +1,2 @@
-true
-true
-false
-false
+NO
+YES
