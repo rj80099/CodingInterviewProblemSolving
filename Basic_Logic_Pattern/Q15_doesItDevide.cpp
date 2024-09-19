@@ -1,34 +1,86 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Does it divide Hackerearth
-// The sum of numbers from 1 to N, S=N*(N+1)/2 and Product P=1*2*3*..*N
-// For P to be divisible by S, All we have to do is to check whether N+1 is prime or not,
-// if it is prime then sum of the numbers will not divide product of the numbers
-// and if it is not prime then sum will divide product.
 
-bool IsPrime(int n)
+//ADT
+/*
+Data:
+
+
+*/
+
+struct Array
 {
-    if (n < 2)
-        return false;
-    for (int i = 2; i * i <= n; i++)
-        if (n % i == 0)
-            return false;
-    return true;
+    int *A;
+    int size;
+    int length;
+};
+
+void append(struct Array *arr,int x)
+{
+    if(arr->length<arr->size)
+        arr->A[arr->length++]=x;
+
 }
 
-int main()
+void insert(struct Array *arr,int index,int x)
 {
-    int t;
-    cin >> t;
-    while (t--)
+    if(index>=0 && index<=arr->length)
     {
-        int n;
-        cin >> n;
-        if (n != 1 && IsPrime(n + 1))
-            cout << "NO\n";
-        else
-            cout << "YES\n";
+        int i=0;
+        for( i=arr->length;i>index;i--)
+        {
+            arr->A[i]=arr->A[i-1];
+        }
+        arr->A[index]=x;
+        arr->length++;
+    }
+}
+
+
+void display(struct Array arr)
+{
+    int i;
+    cout<<"\nElement are\n";
+    for(i=0;i<arr.length;i++)
+        cout<<arr.A[i]<<endl;
+
+}
+int Delete(struct Array *arr, int index)
+{
+    int x=0;
+    if(index>=0 && index<arr->length)
+    {
+        x= arr->A[index];
+        for(int i= index;i<arr->length-1;i++)
+        {
+            arr->A[i]=arr->A[i+1];
+        }
+        arr->length--;
+        return x;
     }
     return 0;
+}
+int main()
+{
+ struct Array arr;
+ int n,i;
+ //cout<<"Enter the size of an array";
+ cin>>arr.size;
+ arr.A = new int[arr.size];
+ arr.length=0;
+
+ //cout<<"Enter number of numbers";
+ cin>>n;
+
+//cout<<"Enter all elements"<<endl;
+for(i=0;i<n;i++)
+    cin>>arr.A[i];
+arr.length=n;
+
+append(&arr,10);
+insert(&arr,0 ,54);
+Delete(&arr,3);
+display(arr);
+ return 0;
 }

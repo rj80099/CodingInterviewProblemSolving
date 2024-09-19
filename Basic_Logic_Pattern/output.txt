@@ -1,2 +1,3 @@
-NO
-YES
+Deleted: 23 34
+linear search fount at: 4
+6 3 4 5 2 
